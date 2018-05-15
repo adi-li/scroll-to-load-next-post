@@ -119,7 +119,8 @@
 				return true;
 			}
 			var lastPostBottom = lastArticle[0].getBoundingClientRect().bottom;
-			return lastPostBottom <= this.settings.scrollThreshold;
+			var windowHeight = $(window.top).height();
+			return lastPostBottom - windowHeight <= this.settings.scrollThreshold;
 		},
 
 		/**
